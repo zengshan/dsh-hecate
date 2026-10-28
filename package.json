@@ -1,0 +1,55 @@
+{
+  "name": "dsh-hecate",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cross-workspace session console for the DSH Web UI: every session on one screen, ordered by who needs you.",
+  "license": "MIT",
+  "author": "zengshan",
+  "homepage": "https://github.com/zengshan/dsh-hecate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zengshan/dsh-hecate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zengshan/dsh-hecate/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "session",
+    "switcher",
+    "console",
+    "workspace",
+    "hecate"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "INSTALL.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}
