@@ -7,7 +7,10 @@ window.__ModuleLoader__.load({
     const NS = 'session-hub'
     const PANEL_ID = 'session-hub'
     const MAX_ROWS = 300
-    const HUB_PATH = 'I:\\_hub'
+    // No machine path is baked in: the console workspace is recognised by the
+    // host-configured path (never shipped), its default title, or the default
+    // `~/.dsh-hub` directory name.
+    const HUB_PATH = ''
     const HUB_TITLE = '控制台'
     const SKIN_KEY = 'dsh-hecate:skin'
     const FONT_KEY = 'dsh-hecate:font'

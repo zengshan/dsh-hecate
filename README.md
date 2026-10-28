@@ -7,6 +7,9 @@
 [![npm](https://img.shields.io/npm/v/dsh-hecate.svg)](https://www.npmjs.com/package/dsh-hecate)
 [![license](https://img.shields.io/npm/l/dsh-hecate.svg)](./LICENSE)
 
+> **社区插件，非 DeepSeek 官方出品。** 名字里的 `dsh-` 只表示“为 DSH 写的”，不代表官方。
+> *Community plugin — not affiliated with or endorsed by DeepSeek.*
+
 **名字的来历**：赫卡忒是希腊神话里「三形一体」的神，站在三岔路口的守望者——举着火炬，告诉你哪条路上有人等你。这正是这个面板做的事：多个会话汇成一个入口，站在路口指路。夜色、火炬、岔路，也正好是这套 deep black + 霓虹的调性。
 
 DSH 的跨工作区会话总览：谁在跑、谁在等你、谁刚跑完，一眼看完。悬停就能看它最后说了什么，点一下就切过去。
