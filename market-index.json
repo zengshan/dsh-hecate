@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Hecate",
+    "zh": "赫卡忒"
+  },
+  "description": {
+    "en": "Session console for DSH: every workspace on one screen, ordered by who needs you.",
+    "zh": "DSH 会话控制台：所有工作区的会话一屏看完，按“谁需要你”排序。"
+  },
+  "metadata": {
+    "categories": {
+      "productivity": {
+        "title": {
+          "en": "Productivity",
+          "zh": "效率"
+        }
+      }
+    },
+    "labels": {
+      "ui": {
+        "title": {
+          "en": "UI",
+          "zh": "界面"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-hecate",
+      "title": {
+        "en": "Hecate — Session Console",
+        "zh": "赫卡忒 · 会话控制台"
+      },
+      "description": {
+        "en": "Every session across every workspace on one screen. Finished ones wait for your tick and turn red when overdue; hover to read the latest reply.",
+        "zh": "所有工作区的会话一张卡片网格；刚跑完的会一直等你，超时变红置顶，悬停即可预览最新回复。"
+      },
+      "icon": "https://raw.githubusercontent.com/zengshan/dsh-hecate/main/icon.svg",
+      "author": "zengshan",
+      "homepage": "https://github.com/zengshan/dsh-hecate",
+      "repository": {
+        "url": "https://github.com/zengshan/dsh-hecate"
+      },
+      "metadata": {
+        "category": "productivity",
+        "labels": [
+          "ui"
+        ],
+        "keywords": [
+          "session",
+          "switcher",
+          "console",
+          "hecate"
+        ]
+      },
+      "versions": [
+        {
+          "version": "1.0.0",
+          "publishTimestamp": 1793170414,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/zengshan/dsh-hecate",
+            "commit": "f7c92e3a7045d347277bbaa470422c1bce66c571"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    }
+  ]
+}
