@@ -4,11 +4,11 @@
 
 *Session Console for DSH — 一个面板看住所有工作区的会话。*
 
-[![npm](https://img.shields.io/npm/v/dsh-hecate.svg)](https://www.npmjs.com/package/dsh-hecate)
-[![license](https://img.shields.io/npm/l/dsh-hecate.svg)](./LICENSE)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 > **社区插件，非 DeepSeek 官方出品。** 名字里的 `dsh-` 只表示“为 DSH 写的”，不代表官方。
 > *Community plugin — not affiliated with or endorsed by DeepSeek.*
+> MIT 许可：免费使用、修改、再分发，注明出处即可。
 
 **名字的来历**：赫卡忒是希腊神话里「三形一体」的神，站在三岔路口的守望者——举着火炬，告诉你哪条路上有人等你。这正是这个面板做的事：多个会话汇成一个入口，站在路口指路。夜色、火炬、岔路，也正好是这套 deep black + 霓虹的调性。
 
@@ -56,11 +56,27 @@ DSH 里会话一结束就变“空闲”，回头就找不着了。这里会一�
 
 ## 安装
 
+**从市场装（推荐）**：`Plugins → Discover → 索引源` 添加
+
 ```
-用 plugin_manager 安装 dsh-hecate
+https://raw.githubusercontent.com/zengshan/dsh-hecate/main/market-index.json
 ```
 
-或从市场安装。第一次加载会在 `~/.dsh-hub` 建一个「控制台」工作区并排到侧栏最上面；如果你的 profile 里已经有标题为「控制台」的工作区，会**接管**它而不是新建。
+然后在列表里点 Hecate 安装。装到的是索引里钉死的那个 commit，内容不会被后续提交悄悄改掉。
+
+**直接从仓库装**：
+
+```
+用 plugin_manager 安装 git+https://github.com/zengshan/dsh-hecate.git#<commit>
+```
+
+**从本地目录装**（自己改着玩的时候）：
+
+```
+用 plugin_manager 安装 <你克隆下来的绝对路径>
+```
+
+第一次加载会在 `~/.dsh-hub` 建一个「控制台」工作区并排到侧栏最上面；如果你的 profile 里已经有标题为「控制台」的工作区，会**接管**它而不是新建。
 
 配置（可选，写在 profile 的 `cordis.patch.yml` 该行下）：
 
@@ -98,7 +114,23 @@ locale/*.json      插件管理器与设置页显示的名字和描述
 
 `client.js` 是六段结构，边界是硬的：字典 → 皮肤（只有 CSS 变量）→ 数据层 → 视图层（只吃算好的模型）→ 组装 → 注册。加皮肤只需在 `SKINS` 里补一组 `--sh-*` 变量；要改结构就在条目里给 `view`，数据层不用动。
 
-打包：`npm pack`。没有构建步骤，没有运行时依赖。
+没有构建步骤，没有运行时依赖，克隆下来就能装。
+
+### 发一版
+
+```bash
+# 1. 改 package.json 的 version
+# 2. 重新生成市场索引（从 .git 读 HEAD 的完整 SHA）
+node tools/make-index.mjs
+# 3. 提交并推送
+git add -A && git commit -m "release: 1.0.1" && git push
+```
+
+市场分发靠 `market-index.json` 里钉死的 commit，所以**索引和代码要一起提交**；已经在用的人不会因为你后续提交而被动变版。
+
+## 分发
+
+MIT。随便 fork、改、包一层、再分发，注明出处即可。不想用市场的话，直接把仓库地址发给别人，让对方 `plugin_manager` 从 git 装。
 
 ## License
 
